@@ -1,0 +1,16 @@
+## Chapter 7: AI Risk Identification and Enterprise Risk Assessment — Flashcards
+
+| # | Front (Question) | Back (Answer) |
+|---|-----------------|---------------|
+| 1 | NIST AI RMF 1.0 — name the four core functions | Govern, Map, Measure, Manage. Exam tip: Govern is foundational/cross-cutting; Map = context & risk ID; Measure = risk analysis/metrics; Manage = risk response & resourcing. |
+| 2 | EU AI Act — four risk tiers (name them) | Unacceptable (banned), High-risk (conformity assessment + documentation + oversight), Limited (transparency obligations), Minimal (no mandatory obligations). Exam tip: credit scoring, hiring, biometric ID = high-risk. |
+| 3 | Inherent risk vs Residual risk | Inherent = risk level BEFORE controls applied. Residual = risk level AFTER controls applied. Exam tip: residual risk drives risk acceptance decisions, not inherent risk. |
+| 4 | OWASP Top 10 for LLM Applications — what does it enumerate? | LLM-specific security risks such as Prompt Injection, Insecure Output Handling, Training Data Poisoning, and Sensitive Information Disclosure. Exam tip: prompt injection = malicious instructions hidden in input/content overriding system prompt. |
+| 5 | AI risk taxonomy — six core categories | Bias/fairness, robustness, security, privacy, explainability, third-party risk. Exam tip: memorize as 'B-R-S-P-E-T' — every high-risk use case should be assessed across all six. |
+| 6 | SR 11-7 | Foundational US Federal Reserve/OCC guidance on Model Risk Management (2011), covering model development, independent validation, and ongoing monitoring. Exam tip: AAIA extends SR 11-7 MRM principles to AI/ML with added focus on data quality, explainability, and drift. |
+| 7 | Data poisoning vs Prompt injection | Data poisoning corrupts TRAINING data to bias model behavior. Prompt injection manipulates INFERENCE-time input/instructions. Exam tip: attack timing (training vs runtime) is the key differentiator tested. |
+| 8 | Hallucination — best primary mitigation | Retrieval-Augmented Generation (RAG) grounded in verified sources + output validation/guardrails before delivery. Exam tip: raising temperature makes hallucination WORSE, not better. |
+| 9 | Risk appetite statement for AI — purpose | A board/executive-approved statement defining the acceptable level of AI risk (e.g., 'no fully autonomous high-stakes decisions without human review'). Exam tip: risk appetite sets the threshold; risk tiering measures actual exposure against it. |
+| 10 | AI risk register — key required fields beyond standard ERM fields | Model/use-case ID, AI taxonomy category, lifecycle stage, human oversight control reference. Exam tip: needed for regulatory inventories (e.g., EU AI Act high-risk system registration). |
+| 11 | Impact assessment for high-risk AI use cases — core elements | Identify affected stakeholders, assess potential harms (financial, safety, discrimination, reputational), evaluate likelihood/severity, document mitigations. Exam tip: comparable to a DPIA but scoped to AI-specific harms, not just privacy. |
+| 12 | Third-party AI risk due diligence — AI-specific additions to standard vendor review | Bias/fairness testing evidence, training data provenance, documented model limitations and intended use. Exam tip: the acquiring org inherits accountability for AI harms even when the model is vendor-supplied. |

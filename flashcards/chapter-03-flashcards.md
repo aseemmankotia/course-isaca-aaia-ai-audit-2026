@@ -1,0 +1,16 @@
+## Chapter 3: MLOps and LLMOps Pipelines: CI/CD, Versioning, and Reproducibility — Flashcards
+
+| # | Front (Question) | Back (Answer) |
+|---|-----------------|---------------|
+| 1 | MLOps pipeline's four core stages? | Build → Test → Release → Deploy. Exam tip: bias/fairness gates sit in the Test stage, before Release approval. |
+| 2 | LLMOps-specific control not found in classic MLOps? | Prompt and guardrail versioning — prompts and safety filters must be tracked and approved like model artifacts. Exam tip: treat prompt + model + guardrail as one reproducible bundle. |
+| 3 | Champion/challenger deployment — purpose? | Route a small percentage of traffic to a new (challenger) model/prompt while the majority stays on the proven (champion) version; compare metrics before full cutover. Exam tip: reduces blast radius of a bad release. |
+| 4 | What must a model registry entry record for auditability? | Version, lineage (training data/code commit), approver identity, approval timestamp, and test results. Exam tip: this is what enables rollback and audit trail. |
+| 5 | Rollback best practice in production ML incidents? | Revert to the last approved registry version via automated/one-click rollback — not retrain. Exam tip: rollback ≠ retrain; retrain is too slow for incident response. |
+| 6 | Segregation of duties in MLOps means? | The person/team that builds and trains a model must not be the sole approver who promotes it to production. Exam tip: distractor answer 'code review is sufficient' is wrong — SoD requires role separation, not just review. |
+| 7 | Which pipeline stage should bias/fairness tests run in? | Test stage, gating promotion to Release. Exam tip: distractors place this in Deploy stage (too late) or 'manual only' (not automated/auditable). |
+| 8 | RAG pipeline-specific control tested on the exam? | Version and access-control the retrieval knowledge base/vector index separately from the model version, since retrieved content changes output without any model change. Exam tip: a stale or poisoned index is treated as a distinct risk from model drift. |
+| 9 | What are 'guardrails' in LLMOps? | Runtime policies for input/output moderation, PII redaction, and jailbreak detection that must be versioned and tested like code. Exam tip: guardrail bypass is a commonly missed failure mode in scenario questions. |
+| 10 | Role of infrastructure-as-code (IaC) in reproducibility? | Defines training/serving environment (compute, dependencies, config) in version-controlled templates so environments can be recreated identically. Exam tip: manual console setup is a common wrong-answer trap for 'reproducibility'. |
+| 11 | Three automated testing gate types in ML CI/CD? | Unit tests (code correctness), integration tests (pipeline/data flow), bias/fairness tests (protected-group metric thresholds). Exam tip: each gate must block promotion on failure, not just log a warning. |
+| 12 | Why version prompts separately from model weights? | Prompt changes can alter behavior/risk without any retraining, so prompts need their own version, approval, and rollback path. Exam tip: if a scenario says an incident followed a prompt change (no model change), the answer should point to prompt rollback, not model rollback. |

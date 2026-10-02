@@ -1,0 +1,16 @@
+## Chapter 11: Bias, Fairness, Explainability Testing, and Third-Party/Model Provenance Assurance — Flashcards
+
+| # | Front (Question) | Back (Answer) |
+|---|-----------------|---------------|
+| 1 | Disparate impact ratio formula and common regulatory threshold? | Ratio = (selection rate of protected group) / (selection rate of most-favored group). Four-fifths rule: ratio below 0.8 signals potential adverse impact. |
+| 2 | Demographic parity vs Equalized odds — key difference? | Demographic parity: equal selection rates across groups, ignoring outcome. Equalized odds: equal TPR and FPR across groups, conditioned on actual outcome. Exam tip: equalized odds accounts for ground truth; demographic parity does not. |
+| 3 | Equal opportunity metric definition? | A relaxed version of equalized odds requiring only equal TRUE POSITIVE rates across groups (not FPR). Used when false negatives matter more (e.g., loan approval for qualified applicants). |
+| 4 | SHAP theoretical foundation? | Shapley values from cooperative game theory — distributes a prediction's outcome fairly among features based on their marginal contribution across all possible feature coalitions. |
+| 5 | LIME core method? | Perturbs input data around a single instance, observes model output changes, and fits a simple interpretable (usually linear) surrogate model locally. Fast but not globally consistent. |
+| 6 | Counterfactual explanation — definition and audit use? | Shows the minimal change to input features needed to flip a model's decision (e.g., 'if income were $5k higher, loan would be approved'). Used to test fairness/actionability and explain individual adverse decisions. |
+| 7 | SOC 2 Type I vs Type II? | Type I: evaluates control DESIGN at a single point in time. Type II: evaluates design AND operating effectiveness over a period (typically 6-12 months). Exam tip: Type II is stronger vendor assurance evidence. |
+| 8 | Key elements of model provenance documentation? | Training data source(s), data licensing terms, data collection/filtering methodology, foundation model lineage (base model + fine-tuning history), and version/change history. |
+| 9 | Why is independent bias testing required even if a vendor provides a fairness report? | Vendor self-reports carry inherent conflict of interest and may use non-representative data or favorable metrics. Auditors must corroborate with independent testing on representative/holdout data. |
+| 10 | Third-party AI vendor assurance evidence — typical sources? | SOC 2 (Type I/II) reports, vendor security/AI questionnaires, contractual AI clauses (bias testing obligations, data usage limits, audit rights), and independent penetration/bias test results. |
+| 11 | Typical audit finding severity levels? | Common scale: Critical / High / Medium / Low — based on likelihood and impact (e.g., legal/regulatory exposure, harm to individuals, reputational risk). Each finding should map to a remediation owner and target date. |
+| 12 | Documenting audit evidence for black-box/foundation models — what to capture when internal logic is inaccessible? | Input/output test logs, SHAP/LIME explanation samples, fairness metric results on test sets, vendor attestations, model card/system card, and documented limitations of testing performed. |
